@@ -1,3 +1,4 @@
+version: "3.9"
 services:
   backend:
     build: backend
@@ -5,19 +6,31 @@ services:
     volumes:
       - ./backend:/src
     ports:
-    - '8000:8000'
+    - '18000:8000'
     environment:
-      - POSTGRES_NAME=online_shop # Probably it's DB name
-      - POSTGRES_USER=online_shop
-      - POSTGRES_PASSWORD=postgres_password
+      DEBUG: "True"
+      SECRET_KEY: django-insecure-@w6%i*cfvma^%o$q8k)_vql*bip(e0bjlw%#$zpjji%59rj6x!
+      POSTGRES_NAME: online_shop
+      POSTGRES_USER: online_shop
+      POSTGRES_PASSWORD: postgres_password
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      STATIC_ROOT_RELATIVE: public/static/
+      STATIC_URL: /static/
+      MEDIA_ROOT_RELATIVE: public/media/
+      MEDIA_URL: /media/
     depends_on:
       - db
 
   db:
     image: postgres
+    ports:
+    - '15432:5432'
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - ./data/postgres/data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=online_shop
-      - POSTGRES_USER=online_shop
-      - POSTGRES_PASSWORD=postgres_password
+      POSTGRES_DB: online_shop
+      POSTGRES_USER: online_shop
+      POSTGRES_PASSWORD: postgres_password
+      PGDATA: /tmp
+    restart: always

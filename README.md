@@ -14,8 +14,7 @@ It's a full stack working online shop, we'll name it later :)
 1. I use docker and docker-compose
 2. Django for backend
 3. Frontend, hasn't decided yet
-4. It should have some basic unittest
+4. It should have some basic unit tests
 5. Every day I will make it batter
 6. I work some sort of agile. Maybe 2 weeks on back and 2 week on front
 7. I better declare what kind of shop it's going to be? which shops can use it? what are client's requirements?
-
