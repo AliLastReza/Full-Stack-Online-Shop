@@ -27,3 +27,53 @@ And I know what I'm going to create is going to suck.
 * Shipping
 * Stock/Shelf management
 * Delivery
+
+### Building an e-commerce site: the key questions
+
+#### Catalogue
+
+**What are our product types? What are we selling? You will need to capture the attributes of your product types within your models.**
+
+* Dried fruit
+  * Walnut
+    * Weight
+    * Harvest date
+    * Quality level
+
+**How is your catalogue organised?**
+
+
+
+#### Pricing, stock and availability
+
+**How is tax calculated?**
+
+9% per product
+
+**What availability messages are shown to customers?**
+
+
+
+**Do you allow pre-orders and back-orders**
+
+No and No.
+
+#### Shipping
+
+**How are shipping charges calculated?**
+
+
+
+## Apps and Models
+
+* checkout
+* address
+* shipping
+* catalogue
+* partner
+* basket
+* payment
+* order
+* customer
+* search
+* home page

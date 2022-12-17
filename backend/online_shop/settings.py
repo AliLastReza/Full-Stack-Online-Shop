@@ -31,7 +31,9 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "0.0.0.0",
+]
 
 
 # Application definition
@@ -43,8 +45,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
     "django.contrib.sites",
     "django.contrib.flatpages",
+
     "oscar.config.Shop",
     "oscar.apps.analytics.apps.AnalyticsConfig",
     "oscar.apps.checkout.apps.CheckoutConfig",
@@ -189,8 +193,18 @@ MEDIA_URL = env("MEDIA_URL")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Oscar Settings
 HAYSTACK_CONNECTIONS = {
     "default": {
         "ENGINE": "haystack.backends.simple_backend.SimpleEngine",
     },
 }
+
+OSCAR_INITIAL_ORDER_STATUS = 'Pending'
+OSCAR_INITIAL_LINE_STATUS = 'Pending'
+OSCAR_ORDER_STATUS_PIPELINE = {
+    'Pending': ('Being processed', 'Cancelled',),
+    'Being processed': ('Processed', 'Cancelled',),
+    'Cancelled': (),
+}
+OSCAR_HIDDEN_FEATURES = ["reviews", "wishlists"]
