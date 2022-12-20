@@ -18,6 +18,7 @@ I'm declaring this requirements base on the client's persona I have in mind and 
 
 And I know what I'm going to create is going to suck.
 
+* This shop should work properly and then we can create forks for different countries and currencies
 * A Home page UI/UX that feel like your at a small shop. Picture of seller, products and some notices around him.
 * Products management for a small shop
 * Product catalog/listing management
@@ -61,8 +62,6 @@ No and No.
 #### Shipping
 
 **How are shipping charges calculated?**
-
-
 
 ## Apps and Models
 

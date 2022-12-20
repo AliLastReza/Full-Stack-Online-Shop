@@ -39,6 +39,8 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "apps.shipping.apps.ShippingConfig",
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -53,7 +55,6 @@ INSTALLED_APPS = [
     "oscar.apps.analytics.apps.AnalyticsConfig",
     "oscar.apps.checkout.apps.CheckoutConfig",
     "oscar.apps.address.apps.AddressConfig",
-    "oscar.apps.shipping.apps.ShippingConfig",
     "oscar.apps.catalogue.apps.CatalogueConfig",
     "oscar.apps.catalogue.reviews.apps.CatalogueReviewsConfig",
     "oscar.apps.communication.apps.CommunicationConfig",
