@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  backend:
+  django:
     build: backend
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
@@ -13,21 +13,22 @@ services:
       POSTGRES_NAME: online_shop
       POSTGRES_USER: online_shop
       POSTGRES_PASSWORD: postgres_password
-      POSTGRES_HOST: db
+      POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       STATIC_ROOT_RELATIVE: public/static/
       STATIC_URL: /static/
       MEDIA_ROOT_RELATIVE: public/media/
       MEDIA_URL: /media/
     depends_on:
-      - db
+      - postgres
 
-  db:
+  postgres:
     image: postgres
     ports:
     - '15432:5432'
     volumes:
       - ./data/postgres/data:/var/lib/postgresql/data
+      - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     environment:
       POSTGRES_DB: online_shop
       POSTGRES_USER: online_shop

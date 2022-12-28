@@ -33,6 +33,8 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = [
     "0.0.0.0",
+    "127.0.0.1",
+    "localhost",
 ]
 
 
@@ -40,6 +42,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     "apps.shipping.apps.ShippingConfig",
+    "apps.order.apps.OrderConfig",
 
     "django.contrib.admin",
     "django.contrib.auth",
@@ -62,7 +65,6 @@ INSTALLED_APPS = [
     "oscar.apps.basket.apps.BasketConfig",
     "oscar.apps.payment.apps.PaymentConfig",
     "oscar.apps.offer.apps.OfferConfig",
-    "oscar.apps.order.apps.OrderConfig",
     "oscar.apps.customer.apps.CustomerConfig",
     "oscar.apps.search.apps.SearchConfig",
     "oscar.apps.voucher.apps.VoucherConfig",
@@ -86,6 +88,7 @@ INSTALLED_APPS = [
     "treebeard",
     "sorl.thumbnail",  # Default thumbnail backend, can be replaced
     "django_tables2",
+    "paypal"
 ]
 
 SITE_ID = 1
